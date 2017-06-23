@@ -45,7 +45,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String URL_TO_HIT = "https://jsonparsingdemo-cec5b.firebaseapp.com/jsonData/moviesData.txt";
+    private final String URL_TO_HIT = "https://api.themoviedb.org/3/search/movie?api_key=9c4441ea8ea48d36e59b0baffa69077e&language=us&query=the&page=1";
     private TextView tvData;
     private ListView lvMovies;
     private ProgressDialog dialog;
@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
                 String finalJson = buffer.toString();
 
                 JSONObject parentObject = new JSONObject(finalJson);
-                JSONArray parentArray = parentObject.getJSONArray("movies");
+                JSONArray parentArray = parentObject.getJSONArray("results");
 
                 List<MovieModel> movieModelList = new ArrayList<>();
 
@@ -119,24 +119,7 @@ public class MainActivity extends ActionBarActivity {
                      * which is commented below
                      */
                     MovieModel movieModel = gson.fromJson(finalObject.toString(), MovieModel.class); // a single line json parsing using Gson
-//                    movieModel.setTitle(finalObject.getString("movie"));
-//                    movieModel.setId(finalObject.getInt("year"));
-//                    movieModel.setPopularity((float) finalObject.getDouble("rating"));
-//                    movieModel.setDirector(finalObject.getString("director"));
 //
-//                    movieModel.setDuration(finalObject.getString("duration"));
-//                    movieModel.setTagline(finalObject.getString("tagline"));
-//                    movieModel.setImage(finalObject.getString("image"));
-//                    movieModel.setStory(finalObject.getString("story"));
-//
-//                    List<MovieModel.Cast> castList = new ArrayList<>();
-//                    for(int j=0; j<finalObject.getJSONArray("cast").length(); j++){
-//                        MovieModel.Cast cast = new MovieModel.Cast();
-//                        cast.setName(finalObject.getJSONArray("cast").getJSONObject(j).getString("name"));
-//                        castList.add(cast);
-//                    }
-//                    movieModel.setCastList(castList);
-                    // adding the final object in the list
                     movieModelList.add(movieModel);
                 }
                 return movieModelList;
@@ -208,13 +191,9 @@ public class MainActivity extends ActionBarActivity {
                 convertView = inflater.inflate(resource, null);
                 holder.ivMovieIcon = (ImageView)convertView.findViewById(R.id.ivIcon);
                 holder.tvMovie = (TextView)convertView.findViewById(R.id.tvMovie);
-                holder.tvTagline = (TextView)convertView.findViewById(R.id.tvTagline);
                 holder.tvYear = (TextView)convertView.findViewById(R.id.tvYear);
-                holder.tvDuration = (TextView)convertView.findViewById(R.id.tvDuration);
-                holder.tvDirector = (TextView)convertView.findViewById(R.id.tvDirector);
                 holder.rbMovieRating = (RatingBar)convertView.findViewById(R.id.rbMovie);
-                holder.tvCast = (TextView)convertView.findViewById(R.id.tvCast);
-                holder.tvStory = (TextView)convertView.findViewById(R.id.tvStory);
+                holder.tvid=(TextView)convertView.findViewById(R.id.tvid);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -224,7 +203,7 @@ public class MainActivity extends ActionBarActivity {
 
             // Then later, when you want to display image
             final ViewHolder finalHolder = holder;
-            ImageLoader.getInstance().displayImage(movieModelList.get(position).getImage(), holder.ivMovieIcon, new ImageLoadingListener() {
+            ImageLoader.getInstance().displayImage(movieModelList.get(position).getPoster_path(), holder.ivMovieIcon, new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     progressBar.setVisibility(View.VISIBLE);
@@ -251,21 +230,13 @@ public class MainActivity extends ActionBarActivity {
             });
 
             holder.tvMovie.setText(movieModelList.get(position).getTitle());
-            holder.tvTagline.setText(movieModelList.get(position).getTagline());
-            holder.tvYear.setText("Year: " + movieModelList.get(position).getId());
-            holder.tvDuration.setText("Duration:" + movieModelList.get(position).getDuration());
-            holder.tvDirector.setText("Director:" + movieModelList.get(position).getDirector());
-
+            holder.tvYear.setText("Year: " + movieModelList.get(position).getRelease_date() );
             // rating bar
-            holder.rbMovieRating.setRating(movieModelList.get(position).getPopularity()/2);
+            holder.rbMovieRating.setRating(movieModelList.get(position).getVote_average()/2);
+            holder.tvid.setText("ID:" + movieModelList.get(position).getId());
+
 
             StringBuffer stringBuffer = new StringBuffer();
-            for(MovieModel.Cast cast : movieModelList.get(position).getCastList()){
-                stringBuffer.append(cast.getName() + ", ");
-            }
-
-            holder.tvCast.setText("Cast:" + stringBuffer);
-            holder.tvStory.setText(movieModelList.get(position).getStory());
             return convertView;
         }
 
@@ -273,13 +244,9 @@ public class MainActivity extends ActionBarActivity {
         class ViewHolder{
             private ImageView ivMovieIcon;
             private TextView tvMovie;
-            private TextView tvTagline;
             private TextView tvYear;
-            private TextView tvDuration;
-            private TextView tvDirector;
             private RatingBar rbMovieRating;
-            private TextView tvCast;
-            private TextView tvStory;
+            private TextView tvid;
         }
 
     }

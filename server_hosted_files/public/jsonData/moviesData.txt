@@ -3,7 +3,7 @@
     {
       "title": "Avengers",
       "release_date": 2012,
-      "popularity": 7.8,
+      "vote_average": 7.8,
       "duration": "141 min",
       "director": "Joss Whedon",
       "overview": "A new age begins",
@@ -24,7 +24,7 @@
     {
       "title": "Interstellar",
       "release_date": 2014,
-      "popularity": 8.7,
+      "vote_average": 8.7,
       "duration": "169 min",
       "director": "Christopher Nolan",
       "overview": "Mankind was born on Earth. It was never meant to die here.",
@@ -48,7 +48,7 @@
 	{
       "title": "Fantastic Four",
       "release_date": 2015,
-      "popularity": 4.0,
+      "vote_average": 4.0,
       "duration": "100 min",
       "director": "Josh Trank",
       "overview": "Change is coming.",
@@ -69,7 +69,7 @@
 	{
       "title": "The Dark Knight",
       "release_date": 2008,
-      "popularity": 9.0,
+      "vote_average": 9.0,
       "duration": "152 min",
       "director": "Christopher Nolan",
       "overview": "Why So Serious?",
@@ -90,7 +90,7 @@
     {
       "title": "The Lord of the Rings: The Return of the King",
       "release_date": 2003,
-      "popularity": 8.9,
+      "vote_average": 8.9,
       "duration": "201 min",
       "director": "Peter Jackson",
       "overview": "This Christmas the journey ends.",
@@ -111,7 +111,7 @@
     {
       "title": "Life Is Beautiful",
       "release_date": 1997,
-      "popularity": 8.6,
+      "vote_average": 8.6,
       "duration": "116 min",
       "director": "Roberto Benigni",
       "overview": "An unforgettable fable that proves love, family and imagination conquer all.",
@@ -132,7 +132,7 @@
     {
       "title": "Gladiator",
       "release_date": 2000,
-      "popularity": 8.5,
+      "vote_average": 8.5,
       "duration": "155 min",
       "director": "Ridley Scott",
       "overview": "Father of a murdered son, husband to a murdered wife and I shall have my vengeance in this life or the next",
@@ -159,7 +159,7 @@
     {
       "title": "The Lion King",
       "release_date": 1994,
-      "popularity": 8.5,
+      "vote_average": 8.5,
       "duration": "89 min",
       "director": "Roger Allers",
       "overview": "The King Has Returned.",
@@ -180,7 +180,7 @@
     {
       "title": "WALL-E",
       "release_date": 2008,
-      "popularity": 8.4,
+      "vote_average": 8.4,
       "duration": "98 min",
       "director": "Andrew Stanton",
       "overview": "He's got a lot of time on his hands.",
@@ -201,7 +201,7 @@
     {
       "title": "Saving Private Ryan",
       "release_date": 1998,
-      "popularity": 8.6,
+      "vote_average": 8.6,
       "duration": "169 min",
       "director": "Steven Spielberg",
       "overview": "There was only one man left in the family, and the mission was to save him",
