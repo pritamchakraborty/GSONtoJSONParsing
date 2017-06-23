@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.hisham.jsonparsingdemo"
-        minSdkVersion 10
+        minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -29,4 +29,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
     compile 'com.squareup.picasso:picasso:2.4.0'
     compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

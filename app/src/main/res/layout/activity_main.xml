@@ -1,12 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="-5dp"
+    android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textInputLayout">
 
+            <EditText
+                android:id="@+id/MovieText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Movie Title" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_gravity="end"
+            android:layout_below="@+id/textInputLayout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-10dp" />
+
+    </RelativeLayout>
+</RelativeLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFF"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"></LinearLayout>
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lvMovies" />
+        android:layout_height="350dp"
+        android:id="@+id/lvMovies"
+        android:layout_weight="1"
+        android:layout_marginTop="171dp"
+        android:layout_below="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </LinearLayout>
