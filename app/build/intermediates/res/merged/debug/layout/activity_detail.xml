@@ -24,8 +24,7 @@
                     android:id="@+id/ivIcon"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/avengers" />
+                    android:scaleType="centerCrop"/>
 
                 <ProgressBar
                     android:id="@+id/progressBar"
@@ -61,42 +60,6 @@
                 android:layout_height="wrap_content"
                 android:text="MovieName"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/tvTagline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tagline"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/tvYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Year"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/tvDuration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Duration"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/tvDirector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Director"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-
-            <TextView
-                android:id="@+id/tvCast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cast"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:id="@+id/tvStory"

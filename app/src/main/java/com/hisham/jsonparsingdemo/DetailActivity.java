@@ -20,14 +20,8 @@ public class DetailActivity extends ActionBarActivity {
 
     private ImageView ivMovieIcon;
     private TextView tvMovie;
-    private TextView tvTagline;
-    private TextView tvYear;
-    private TextView tvDuration;
-    private TextView tvDirector;
-    private RatingBar rbMovieRating;
-    private TextView tvCast;
-    private TextView tvStory;
     private ProgressBar progressBar;
+    private TextView tvStory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,22 +29,22 @@ public class DetailActivity extends ActionBarActivity {
         setContentView(R.layout.activity_detail);
 
         // Showing and Enabling clicks on the Home/Up button
-        if(getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
         // setting up text views and stuff
-        setUpUIViews();
+           setUpUIViews();
 
         // recovering data from MainActivity, sent via intent
         Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
+        if (bundle != null) {
             String json = bundle.getString("movieModel"); // getting the model from MainActivity send via extras
             MovieModel movieModel = new Gson().fromJson(json, MovieModel.class);
 
             // Then later, when you want to display image
-            ImageLoader.getInstance().displayImage(movieModel.getImage(), ivMovieIcon, new ImageLoadingListener() {
+            ImageLoader.getInstance().displayImage(movieModel.getPoster_path(), ivMovieIcon, new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     progressBar.setVisibility(View.VISIBLE);
@@ -73,36 +67,21 @@ public class DetailActivity extends ActionBarActivity {
             });
 
             tvMovie.setText(movieModel.getTitle());
-            tvTagline.setText(movieModel.getTagline());
-            tvYear.setText("Year: " + movieModel.getId());
-            tvDuration.setText("Duration:" + movieModel.getDuration());
-            tvDirector.setText("Director:" + movieModel.getDirector());
+            tvStory.setText(movieModel.getOverview());
 
-            // rating bar
-            rbMovieRating.setRating(movieModel.getPopularity() / 2);
 
             StringBuffer stringBuffer = new StringBuffer();
-            for(MovieModel.Cast cast : movieModel.getCastList()){
-                stringBuffer.append(cast.getName() + ", ");
-            }
-
-            tvCast.setText("Cast:" + stringBuffer);
-            tvStory.setText(movieModel.getStory());
 
         }
 
+
     }
+
 
     private void setUpUIViews() {
         ivMovieIcon = (ImageView)findViewById(R.id.ivIcon);
         tvMovie = (TextView)findViewById(R.id.tvMovie);
-        tvTagline = (TextView)findViewById(R.id.tvTagline);
-        tvYear = (TextView)findViewById(R.id.tvYear);
-        tvDuration = (TextView)findViewById(R.id.tvDuration);
-        tvDirector = (TextView)findViewById(R.id.tvDirector);
-        rbMovieRating = (RatingBar)findViewById(R.id.rbMovie);
-        tvCast = (TextView)findViewById(R.id.tvCast);
-        tvStory = (TextView)findViewById(R.id.tvStory);
+        tvStory= (TextView)findViewById(R.id.tvStory);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
     }
 

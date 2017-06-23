@@ -22,5 +22,29 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "C:\\Users\\Pritam Chakraborty\\Desktop\\Movie App(Update)\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\Pritam Chakraborty\\.android\\build-cache\\b01581d876fcd9c564351eb0b1e264ede941f1ad\\output\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 287,
+                        "endColumn": 55,
+                        "endOffset": 338
+                    }
+                }
+            }
+        ]
     }
 ]

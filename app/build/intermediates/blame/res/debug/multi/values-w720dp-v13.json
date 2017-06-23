@@ -22,5 +22,29 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "C:\\Users\\Pritam Chakraborty\\Desktop\\Movie App(Update)\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 76,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "C:\\Users\\Pritam Chakraborty\\.android\\build-cache\\b01581d876fcd9c564351eb0b1e264ede941f1ad\\output\\res\\values-w720dp\\values-w720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 289,
+                        "endColumn": 76,
+                        "endOffset": 361
+                    }
+                }
+            }
+        ]
     }
 ]

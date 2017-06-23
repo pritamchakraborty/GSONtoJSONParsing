@@ -1,23 +1,32 @@
 package com.hisham.jsonparsingdemo.models;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
 /**
- * Created by hisham on 9/6/2015.
+ * Created by pritam on 9/6/2015.
  */
 public class MovieModel {
     private int id;
     private String title;
-    private float popularity;
-    private String duration;
-    private String director;
-    private String tagline;
-    @SerializedName("cast")
-    private List<Cast> castList;
-    private String image;
-    private String story;
+    private float vote_average;
+    private String release_date;
+    private String poster_path;
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    private String overview;
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
 
     public String getTitle() {
         return title;
@@ -35,71 +44,19 @@ public class MovieModel {
         this.id = id;
     }
 
-    public float getPopularity() {
-        return popularity;
+    public float getVote_average() {
+        return vote_average;
     }
 
-    public void setPopularity(float popularity) {
-        this.popularity = popularity;
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
+    }
+    public String getPoster_path() {
+        return ("http://image.tmdb.org/t/p/w185" +poster_path);
     }
 
-    public String getDuration() {
-        return duration;
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public String getTagline() {
-        return tagline;
-    }
-
-    public void setTagline(String tagline) {
-        this.tagline = tagline;
-    }
-
-    public List<Cast> getCastList() {
-        return castList;
-    }
-
-    public void setCastList(List<Cast> castList) {
-        this.castList = castList;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getStory() {
-        return story;
-    }
-
-    public void setStory(String story) {
-        this.story = story;
-    }
-
-    public static class Cast {
-        private String name;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
 }

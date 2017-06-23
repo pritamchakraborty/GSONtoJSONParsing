@@ -1,4 +1,4 @@
-#Wed Jun 21 00:26:15 PDT 2017
-base.0=C\:\\Users\\Pritam Chakraborty\\Desktop\\GSONtoJSONParsing\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Thu Jun 22 22:37:40 PDT 2017
+base.0=C\:\\Users\\Pritam Chakraborty\\Desktop\\Movie App(Update)\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=C\:\\Users\\Pritam Chakraborty\\Desktop\\GSONtoJSONParsing\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=C\:\\Users\\Pritam Chakraborty\\Desktop\\Movie App(Update)\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
