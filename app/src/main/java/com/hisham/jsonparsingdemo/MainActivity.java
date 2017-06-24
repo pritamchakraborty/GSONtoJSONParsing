@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -45,10 +47,11 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String URL_TO_HIT = "https://api.themoviedb.org/3/search/movie?api_key=9c4441ea8ea48d36e59b0baffa69077e&language=us&query=the&page=1";
+    private final String URL_TO_HIT = "https://api.themoviedb.org/3/search/movie?api_key=9c4441ea8ea48d36e59b0baffa69077e&language=us";
     private TextView tvData;
     private ListView lvMovies;
     private ProgressDialog dialog;
+    EditText MovieText;
 
     // Git error fix - http://stackoverflow.com/questions/16614410/android-studio-checkout-github-error-createprocess-2-windows
 
@@ -56,6 +59,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MovieText = (EditText) findViewById(R.id.MovieText);
+        Button queryButton = (Button) findViewById(R.id.button3);
+
 
         dialog = new ProgressDialog(this);
         dialog.setIndeterminate(true);
